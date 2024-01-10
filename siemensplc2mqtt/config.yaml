@@ -1,5 +1,5 @@
 name: SiemensPlc2MQTT
-version: "0.0.2"
+version: "0.0.3"
 slug: siemensplc2mqtt
 description: Addon for data interaction between Siemens PLC's and a MQTT broker
 url: "https://github.com/dixi83/hassio-addons"
@@ -40,8 +40,8 @@ schema:
       ip: match(^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$)
       rack: int(0,63)?
       slot: int(0,63)?
-      local_tsap: match(^[a-fA-F0-9]+$)
-      remote_tsap: match(^[a-fA-F0-9]+$)
+      local_tsap: match(^[a-fA-F0-9]+$)?
+      remote_tsap: match(^[a-fA-F0-9]+$)?
   read_tags:
     - connection_id: int(0,9)
       friendly_mane: str
