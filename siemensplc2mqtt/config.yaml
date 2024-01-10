@@ -15,38 +15,40 @@ init: false
 map:
   - share:rw
 options:
-  - name: PLC name
-    ip: 10.10.10.1
-    rack: 0
-    slot: 2
-    read_tags:
-      - friendly_mane: Read tag name
-        entity: binary_sensor
-        entity_sensor_type: binary_sensor.motion
-        address: DB2.DBX0.2
-        poll_interval: 100ms
-    write_tags:
-      - friendly_mane: Write tag name
-        entity: binary_switch
-        address: DB2.DBX1.0
+  connection:
+    - name: PLC name
+      ip: 10.10.10.1
+      rack: 0
+      slot: 2
+      read_tags:
+        - friendly_mane: Read tag name
+          entity: binary_sensor
+          entity_sensor_type: binary_sensor.motion
+          address: DB2.DBX0.2
+          poll_interval: 100ms
+      write_tags:
+        - friendly_mane: Write tag name
+          entity: binary_switch
+          address: DB2.DBX1.0
 schema:
-  - name: str
-    ip: match(^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$)
-    rack: int(0,63)?
-    slot: int(0,63)?
-    local_tsap: match(^[a-fA-F0-9]+$)
-    remote_tsap: match(^[a-fA-F0-9]+$)
-    read_tags:
-      - friendly_mane: str
-        entity: list(binary_sensor,button,event,light,sensor,switch)
-        entity_sensor_type: list(binary_sensor.motion)? # TODO: finisch these lists
-        entity_light_type: list(light.brightness,light.onoff,light.rgb,light.rgbw)?
-        entity_event_type: list(event.button,event.doorbel,event.motion)?
-        unit: str?
-        address: match((^Q\d+\b.\b[0-7])$|^I\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^IB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^IW\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^ID\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$)
-        poll_interval: list(100ms,1s,1m,5m)
-        additional_info: str?
-    write_tags:
-      - friendly_mane: str
-        entity: list(binary_sensor,button,event,light,switch,light)
-        address: match((^Q\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$)
+  connection:
+    - name: str
+      ip: match(^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$)
+      rack: int(0,63)?
+      slot: int(0,63)?
+      local_tsap: match(^[a-fA-F0-9]+$)
+      remote_tsap: match(^[a-fA-F0-9]+$)
+      read_tags:
+        - friendly_mane: str
+          entity: list(binary_sensor,button,event,light,sensor,switch)
+          entity_sensor_type: list(binary_sensor.motion)? # TODO: finisch these lists
+          entity_light_type: list(light.brightness,light.onoff,light.rgb,light.rgbw)?
+          entity_event_type: list(event.button,event.doorbel,event.motion)?
+          unit: str?
+          address: match((^Q\d+\b.\b[0-7])$|^I\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^IB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^IW\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^ID\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$)
+          poll_interval: list(100ms,500ms,1s,1m,5m)
+          additional_info: str?
+      write_tags:
+        - friendly_mane: str
+          entity: list(binary_sensor,button,event,light,switch,light)
+          address: match((^Q\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$)
