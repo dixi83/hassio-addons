@@ -1,5 +1,5 @@
 name: SiemensPlc2MQTT
-version: "0.0.6"
+version: "0.0.7"
 slug: siemensplc2mqtt
 description: Addon for data interaction between Siemens PLC's and a MQTT broker
 url: "https://github.com/dixi83/hassio-addons"
@@ -56,5 +56,5 @@ schema:
   write_tags:
     - connection_id: int(0,9)
       friendly_mane: str
-      entity: list("binary_switch"|"button"|"event"|"light"|"switch"|"light")
+      entity: list("binary_switch"|"button"|"event"|"light"|"switch")
       address: match((^Q\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$)
