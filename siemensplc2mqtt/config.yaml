@@ -1,5 +1,5 @@
 name: SiemensPlc2MQTT
-version: "0.0.5"
+version: "0.0.6"
 slug: siemensplc2mqtt
 description: Addon for data interaction between Siemens PLC's and a MQTT broker
 url: "https://github.com/dixi83/hassio-addons"
@@ -45,16 +45,16 @@ schema:
   read_tags:
     - connection_id: int(0,9)
       friendly_mane: str
-      entity: "list(binary_sensor|button|event|light|sensor|switch)"
-      entity_sensor_type: "list(binary_sensor.motion)?" # TODO: finisch these lists
-      entity_light_type: "list(light.brightness|light.onoff|light.rgb|light.rgbw)?"
-      entity_event_type: "list(event.button|event.doorbel|event.motion)?"
+      entity: list("binary_sensor"|"button"|"event"|"light"|"sensor"|"switch")
+      entity_sensor_type: list("binary_sensor.motion")? # TODO: finisch these lists
+      entity_light_type: list("light.brightness"|"light.onoff"|"light.rgb"|"light.rgbw")?
+      entity_event_type: list("event.button"|"event.doorbel"|"event.motion")?
       unit: str?
       address: match((^Q\d+\b.\b[0-7])$|^I\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^IB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^IW\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^ID\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$)
-      poll_interval: "list(100ms|500ms|1s|1m|5m)"
+      poll_interval: list("100ms"|"500ms"|"1s"|"1m"|"5m")
       additional_info: str?
   write_tags:
     - connection_id: int(0,9)
       friendly_mane: str
-      entity: "list(binary_switch|button|event|light|switch|light)"
+      entity: list("binary_switch"|"button"|"event"|"light"|"switch"|"light")
       address: match((^Q\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$)
