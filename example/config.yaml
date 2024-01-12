@@ -1,5 +1,5 @@
 name: Example add-on
-version: "1.2.9"
+version: "1.2.10"
 slug: example
 description: Example add-on
 url: "https://github.com/dixi83/hassio-addons/tree/main/example"
@@ -23,7 +23,7 @@ options:
     - connection_id: 0
       friendly_mane: Read tag name
       entity: binary_sensor
-      # entity_sensor_type: binary_sensor.motion
+      entity_sensor_type: binary_sensor.motion
       # address: DB2.DBX0.2
       poll_interval: 100ms
   # write_tags:
@@ -44,15 +44,15 @@ schema:
     - connection_id: int(0,9)
       friendly_mane: str
       entity: list(binary_sensor|button|event|light|sensor|switch)
-      # entity_sensor_type: list(binary_sensor.motion|binary_sensor.smoke)?
-      # entity_light_type: list(light.brightness|light.onoff|light.rgb|light.rgbw)?
-      # entity_event_type: list(event.button|event.doorbel|event.motion)?
+      entity_sensor_type: list(binary_sensor.motion|binary_sensor.smoke)?
+      entity_light_type: list(light.brightness|light.onoff|light.rgb|light.rgbw)?
+      entity_event_type: list(event.button|event.doorbel|event.motion)?
       unit: str?
-      # address: match((^Q\d+\b.\b[0-7])$|^I\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^IB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^IW\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^ID\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$)
+      # address: match("(^Q\d+\b.\b[0-7])$|^I\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^IB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^IW\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^ID\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$")
       poll_interval: list(100ms|500ms|1s|1m|5m)
   #     additional_info: str?
   # write_tags:
   #   - connection_id: int(0,9)
   #     friendly_mane: str
   #     entity: list(binary_switch|button|event|light|switch)
-  #     address: match((^Q\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$)
+  #     address: match("(^Q\d+\b.\b[0-7])$|(^M\d+\b.\b[0-7])$|(^DB\d+\b\.DBX\d+\b\.\b[0-7])$|(^QB\d+)$|(^MB\d+)$|(^DB\d+\b\.DBB\d+)$|(^QW\d+)$|(^MW\d+)$|(^DB\d+\b\.DBW\d+)$|(^QD\d+)$|(^MD\d+)$|(^DB\d+\b\.DBD\d+)$")
