@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Example add-on
-version: "1.2.0"
+version: "1.2.1"
 slug: example
 description: Example add-on
 url: "https://github.com/home-assistant/addons-example/tree/main/example"
@@ -16,7 +16,13 @@ map:
 options:
   something:
     - entity: binary_sensor
+  something_new:
+    - str: some string
+      entity: binary_sensor
 schema:
   something:
     - entity: list(binary_sensor|button|switch)
+  something_new:
+    - str: str?
+      entity: list(binary_sensor|button|switch)
 image: "ghcr.io/home-assistant/{arch}-addon-example"
