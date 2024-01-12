@@ -2,7 +2,7 @@ name: SiemensPlc2MQTT
 version: "0.0.7"
 slug: siemensplc2mqtt
 description: Addon for data interaction between Siemens PLC's and a MQTT broker
-url: "https://github.com/dixi83/hassio-addons"
+url: "https://github.com/dixi83/hassio-addons/tree/main/siemensplc2mqtt"
 services:
   - mqtt:need
 arch:
@@ -46,7 +46,7 @@ schema:
     - connection_id: int(0,9)
       friendly_mane: str
       entity: list("binary_sensor"|"button"|"event"|"light"|"sensor"|"switch")
-      entity_sensor_type: list("binary_sensor.motion")? # TODO: finisch these lists
+      entity_sensor_type: list("binary_sensor.motion"|"binary_sensor.smoke")? # TODO: finisch these lists
       entity_light_type: list("light.brightness"|"light.onoff"|"light.rgb"|"light.rgbw")?
       entity_event_type: list("event.button"|"event.doorbel"|"event.motion")?
       unit: str?
