@@ -1,5 +1,5 @@
 name: Example add-on
-version: "1.2.5"
+version: "1.2.6"
 slug: example
 description: Example add-on
 url: "https://github.com/dixi83/hassio-addons/tree/main/example"
@@ -19,13 +19,13 @@ options:
       ip: 10.10.10.1
       rack: 0
       slot: 2
-  # read_tags:
-  #   - connection_id: 0
-  #     friendly_mane: Read tag name
-  #     entity: binary_sensor
-  #     entity_sensor_type: binary_sensor.motion
-  #     address: DB2.DBX0.2
-  #     poll_interval: 100ms
+  read_tags:
+    - connection_id: 0
+      friendly_mane: Read tag name
+      entity: binary_sensor
+      # entity_sensor_type: binary_sensor.motion
+      # address: DB2.DBX0.2
+      # poll_interval: 100ms
   # write_tags:
   #   - connection_id: 0
   #     friendly_mane: Write tag name
@@ -40,10 +40,10 @@ schema:
       slot: int(0,63)?
       local_tsap: match(^[a-fA-F0-9]+$)?
       remote_tsap: match(^[a-fA-F0-9]+$)?
-  # read_tags:
-  #   - connection_id: int(0,9)
-  #     friendly_mane: str
-  #     entity: list(binary_sensor|button|event|light|sensor|switch)
+  read_tags:
+    - connection_id: int(0,9)
+      friendly_mane: str
+      entity: list(binary_sensor|button|event|light|sensor|switch)
   #     entity_sensor_type: list(binary_sensor.motion|binary_sensor.smoke)?
   #     entity_light_type: list(light.brightness|light.onoff|light.rgb|light.rgbw)?
   #     entity_event_type: list(event.button|event.doorbel|event.motion)?
