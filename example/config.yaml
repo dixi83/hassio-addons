@@ -1,5 +1,5 @@
 name: Example add-on
-version: "1.2.7"
+version: "1.2.8"
 slug: example
 description: Example add-on
 url: "https://github.com/dixi83/hassio-addons/tree/main/example"
@@ -23,7 +23,7 @@ options:
     - connection_id: 0
       friendly_mane: Read tag name
       entity: binary_sensor
-      entity_sensor_type: binary_sensor.motion
+      # entity_sensor_type: binary_sensor.motion
       address: DB2.DBX0.2
       poll_interval: 100ms
   # write_tags:
