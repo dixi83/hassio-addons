@@ -1,5 +1,5 @@
 name: SiemensPlc2MQTT
-version: "0.0.9"
+version: "0.0.10"
 slug: siemensplc2mqtt
 description: Addon for data interaction between Siemens PLC's and a MQTT broker
 url: "https://github.com/dixi83/hassio-addons/tree/main/siemensplc2mqtt"
