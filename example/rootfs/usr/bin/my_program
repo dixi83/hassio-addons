@@ -1,5 +1,4 @@
 #!/bin/bash
 
 echo "All done!" > /share/example_addon_output.txt
-
-echo bashio::config >> /share/config_output.txt
+bashio::config >> /share/config_output.txt
