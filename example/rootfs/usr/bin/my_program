@@ -1,4 +1,11 @@
 #!/bin/bash
 
 echo "All done!" > /share/example_addon_output.txt
-bashio::config >> /share/config_output.txt
+
+for var in $(bashio::config 'connection|keys'); do
+    name=$(bashio::config "connection[${var}].name")
+    value=$(bashio::config "connection[${var}].id")
+    bashio::log.info "Setting ${name} to ${value}"
+
+    echo (-o "${name}=${value}") >> /share/config_output.txt
+done
