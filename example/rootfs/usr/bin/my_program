@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bashio
 
 echo "All done!" > /share/example_addon_output.txt
 
