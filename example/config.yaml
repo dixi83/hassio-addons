@@ -1,5 +1,5 @@
 name: Example add-on
-version: "1.2.15"
+version: "1.2.16"
 slug: example
 description: Example add-on
 url: "https://github.com/dixi83/hassio-addons/tree/main/example"
