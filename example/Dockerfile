@@ -11,3 +11,4 @@ RUN \
 # Copy root filesystem
 COPY rootfs /
 RUN chmod +x /etc/services.d/example/run
+RUN chmod +x /usr/bin/my_program
