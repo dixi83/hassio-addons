@@ -12,3 +12,4 @@ RUN \
 COPY rootfs /
 RUN chmod +x /etc/services.d/example/run
 RUN chmod +x /usr/bin/my_program
+RUN chmod +x /bin/*
