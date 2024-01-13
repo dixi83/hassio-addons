@@ -2,4 +2,4 @@
 
 echo "All done!" > /share/example_addon_output.txt
 
-cat /data/options.json >> /share/config_output.txt
+echo bashio::config >> /share/config_output.txt
