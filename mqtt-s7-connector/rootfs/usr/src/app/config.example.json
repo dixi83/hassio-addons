@@ -25,13 +25,13 @@
     "rejectUnauthorized": true
   },
 
-  "devices": [{
+  "devices": [
+    {
       "name": "Dimmable Light",
       "type": "light",
 
       "state": "DB56,X150.0",
       "brightness": "DB56,BYTE151"
-
     },
     {
       "name": "Light",
@@ -95,8 +95,6 @@
       "state": "DB56,X150.0"
     },
 
-
-
     {
       "name": "Light Readonly Interval",
       "type": "light",
@@ -156,5 +154,4 @@
       }
     }
   ]
-
 }
