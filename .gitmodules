@@ -1,0 +1,3 @@
+[submodule "mqtt-s7-connector"]
+	path = mqtt-s7-connector
+	url = https://github.com/dixi83/mqtt-s7-connector.git
