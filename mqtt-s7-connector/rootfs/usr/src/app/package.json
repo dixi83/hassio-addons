@@ -1,0 +1,38 @@
+{
+  "name": "s7-mqtt-connector",
+  "version": "1.0.2",
+  "description": "Connect Siemens S7 to Mqtt with Homeassistant discovery support",
+  "keywords": [
+    "mqtt",
+    "homeassistant",
+    "siemens",
+    "s7",
+    "plc",
+    "mqtt-bridge"
+  ],
+  "main": "index.js",
+  "bin": {
+    "s7-mqtt-connector": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "timroemisch https://github.com/timroemisch",
+  "contributors": [
+    "sparkie79 https://github.com/sparkie79/",
+    "lsibilla https://github.com/lsibilla/",
+    "madness007 https://github.com/madness007/",
+    "poupaerta https://github.com/poupaerta/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/timroemisch/mqtt-s7-connector.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "fastq": "^1.11.0",
+    "mqtt": "^4.2.8",
+    "nodes7": "^0.3.18"
+  }
+}
