@@ -1,4 +1,4 @@
-ARG BUILD_FROM=node:18.19.0-alpine3.19
+ARG BUILD_FROM=alpine:3.19.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -41,7 +41,6 @@ RUN \
         libssl3=3.1.4-r4 \
         musl-utils=1.2.4_git20230717-r4 \
         musl=1.2.4_git20230717-r4 \
-        libstdc++=13.2.1_git20231014-r0 \
     \
     && apk add --no-cache \
         bash=5.2.21-r0 \
@@ -49,6 +48,7 @@ RUN \
         jq=1.7.1-r0 \
         tzdata=2023d-r0 \
     \
+    && apk add --update --no-cache nodejs nodejs-npm \ 
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; \
     elif [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; \
@@ -86,7 +86,6 @@ RUN \
 
 # Copy root filesystem
 COPY rootfs /
-
 # Copy s6-overlay adjustments
 COPY s6-overlay /package/admin/s6-overlay-${S6_OVERLAY_VERSION}/
 
