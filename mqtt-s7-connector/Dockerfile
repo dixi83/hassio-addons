@@ -48,7 +48,10 @@ RUN \
         jq=1.7.1-r0 \
         tzdata=2023d-r0 \
     \
-    && apk add --update --no-cache nodejs nodejs-npm \ 
+    && apk add --update --no-cache \
+        nodejs=20.11.0-r0 \
+        npm=10.3.0-r0 \ 
+    \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; \
     elif [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; \
