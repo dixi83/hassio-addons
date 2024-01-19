@@ -30,28 +30,28 @@ ARG BASHIO_VERSION="v0.16.2"
 ARG S6_OVERLAY_VERSION="3.1.6.2"
 ARG TEMPIO_VERSION="2021.09.0"
 RUN \
-    set -o pipefail \
-    \
-    && apk add --no-cache --virtual .build-dependencies \
+    set -o pipefail
+RUN \
+    apk add --no-cache --virtual .build-dependencies \
         tar=1.35-r2 \
-        xz=5.4.5-r0 \
-    \
-    && apk add --no-cache \
+        xz=5.4.5-r0
+RUN \
+    apk add --no-cache \
         libcrypto3=3.1.4-r4 \
         libssl3=3.1.4-r4 \
         musl-utils=1.2.4_git20230717-r4 \
-        musl=1.2.4_git20230717-r4 \
-    \
-    && apk add --no-cache \
+        musl=1.2.4_git20230717-r4
+RUN \
+    apk add --no-cache \
         bash=5.2.21-r0 \
         curl=8.5.0-r0 \
         jq=1.7.1-r0 \
-        tzdata=2023d-r0 \
-    \
-    && apk add --update --no-cache \
+        tzdata=2023d-r0
+RUN \
+    apk add --update --no-cache \
         nodejs=20.11.0-r0 \
-        npm=10.3.0-r0 \ 
-    \
+        npm=10.3.0-r0
+RUN \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; \
     elif [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; \
