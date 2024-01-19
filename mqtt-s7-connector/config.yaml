@@ -7,6 +7,5 @@ url: https://github.com/dixi83/hassio-addons/mqtt-s7-connector
 arch:
   - aarch64
   - amd64
-  - armv7
 map:
   - addon_config:rw
