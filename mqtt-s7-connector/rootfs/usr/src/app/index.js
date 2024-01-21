@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-let config = require("./config");
+let config = require("/config/config.json");
 
 let mqtt_handler = require("./mqtt_handler.js");
 let plc_handler = require("./plc.js");
