@@ -7,7 +7,7 @@ url: https://github.com/dixi83/hassio-addons/mqtt-s7-connector
 init: false
 services:
   - mqtt:need
-discovery: 
+discovery:
   - mqtt
 arch:
   - aarch64

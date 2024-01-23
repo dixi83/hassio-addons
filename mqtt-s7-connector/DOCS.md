@@ -1,6 +1,7 @@
 # MQTT S7 Connector - Home Assistant Addon
 
-This project integrates [mqtt-s7connector developed by Tim Roemisch](https://github.com/timroemisch/mqtt-s7-connector) as an add-on for Home Assistant. 
+This project integrates [mqtt-s7connector developed by Tim Roemisch](https://github.com/timroemisch/mqtt-s7-connector) as an add-on for Home Assistant.
+
 <!-- Because the folder structure is had to be completely changed, I was not able anymore to keep the original repo in sync. I will try to fix this with scripting later on. -->
 
 This documentation file is edited so it will contain everything you need to know to make it work with your Home Assistant installation and your Siemens PLC.
@@ -35,21 +36,24 @@ Or add the repo by clicking:
 After installing the Addon a created the `addon_configs\xxxxxxxx_mqtt-s7-connector` folder. Inside this folder you'll find the [`config.example.json`](./rootfs/usr/src/app/config.example.json) file. This file contains an example of the configuration. Copy the file and rename it to `config.json` as a starting point
 
 There are several ways to get access to this folder, e.g.:
-- Samba share add-on 
+
+- Samba share add-on
 - File editor add-on
 - Visual Studio server add-on
 
-The config file has to be valid JSON (You can check [here](https://jsonformatter.curiousconcept.com/) if it´s correct)  
+The config file has to be valid JSON (You can check [here](https://jsonformatter.curiousconcept.com/) if it´s correct)
 
 The `config.json` should contain separated in 3 sections:
+
 - `"plc":`
 - `"mqtt":`
 - `"devices":`
 
 ### plc:
-  > **general setup of the connection to the plc**
-  >
-  > In the most use cases you only have to change the host value to the correct ip
+
+> **general setup of the connection to the plc**
+>
+> In the most use cases you only have to change the host value to the correct ip
 
 ```
 "plc": {
@@ -62,13 +66,14 @@ The `config.json` should contain separated in 3 sections:
 ```
 
 ### mqtt:
-  > **general setup of the connection to the mqtt broker**
-  >
-  > The URL/host value can be one of the following protocols: 'mqtt', 'mqtts', 'tcp', 'tls', 'ws', 'wss'.
-  >
-  > If you are using a self-signed certificate, use the `rejectUnauthorized: false` option. Beware that you are exposing yourself to man in the middle attacks, so it is a configuration that is not recommended for production environments.
-  >
-  > [More info](https://github.com/mqttjs/MQTT.js#mqttconnecturl-options)
+
+> **general setup of the connection to the mqtt broker**
+>
+> The URL/host value can be one of the following protocols: 'mqtt', 'mqtts', 'tcp', 'tls', 'ws', 'wss'.
+>
+> If you are using a self-signed certificate, use the `rejectUnauthorized: false` option. Beware that you are exposing yourself to man in the middle attacks, so it is a configuration that is not recommended for production environments.
+>
+> [More info](https://github.com/mqttjs/MQTT.js#mqttconnecturl-options)
 
 ```
 "mqtt": {
@@ -80,12 +85,13 @@ The `config.json` should contain separated in 3 sections:
 ```
 
 ### devices:
-  > **list of all registered devices**
-  >
-  > the list of devices is implemented as an array in json.  
-  > each device has it's own entry in this list and will be configured there.
-  >
-  > Each device has to have a 'name' entry and a 'type' entry, the remaining attributes are optional
+
+> **list of all registered devices**
+>
+> the list of devices is implemented as an array in json.  
+> each device has it's own entry in this list and will be configured there.
+>
+> Each device has to have a 'name' entry and a 'type' entry, the remaining attributes are optional
 
 ```
 "devices": [
@@ -203,7 +209,8 @@ Now after rewriting it's possible to add more options inside the brackets of the
 **Available options:**
 
 ### rw
-  > Changes the read / write permissions
+
+> Changes the read / write permissions
 
 |     | Read PLC | Write PLC | Subscribe MQTT | Publish MQTT |
 | --- | -------- | --------- | -------------- | ------------ |
@@ -217,9 +224,11 @@ Now after rewriting it's possible to add more options inside the brackets of the
     "rw": "r"
 },
 ```
+
 ### update_interval
-  > By default (without this option) each attribute will sent an update over mqtt after it changes, but this option will disable it and set an interval for updates.  
-  > The time is set in ms
+
+> By default (without this option) each attribute will sent an update over mqtt after it changes, but this option will disable it and set an interval for updates.  
+> The time is set in ms
 
 ```
 "state": {
@@ -229,7 +238,8 @@ Now after rewriting it's possible to add more options inside the brackets of the
 ```
 
 ### unit_of_measurement
-  > This is only for Home Assistant. It will add an additional unit of measurement to the data.
+
+> This is only for Home Assistant. It will add an additional unit of measurement to the data.
 
 ```
 "state": {
@@ -239,8 +249,9 @@ Now after rewriting it's possible to add more options inside the brackets of the
 ```
 
 ### set_plc
-  > By default attributes have only one address, but if you define "set_plc"  
-  > the attribute will read from "plc" and write to "set_plc"
+
+> By default attributes have only one address, but if you define "set_plc"  
+> the attribute will read from "plc" and write to "set_plc"
 
 ```
 "state": {
@@ -250,8 +261,9 @@ Now after rewriting it's possible to add more options inside the brackets of the
 ```
 
 ### write_back
-  > When using both `plc_address` and `plc_set_address`, setting `write_back` to `true`
-  > will automatically write any changes read from `plc_address` to `plc_set_address`.
+
+> When using both `plc_address` and `plc_set_address`, setting `write_back` to `true`
+> will automatically write any changes read from `plc_address` to `plc_set_address`.
 
 ```
 "state": {
@@ -266,7 +278,6 @@ Now after rewriting it's possible to add more options inside the brackets of the
 This tool will send for each device an auto-discovery message over mqtt in the correct format defined by Home Assistant.
 
 The default mqtt topic is `homeassistant`, it can be changed in the config file. (See the [example](https://github.com/timroemisch/mqtt-s7-connector/blob/master/config.example.json#L10))
-
 
 ## License
 
