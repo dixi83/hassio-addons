@@ -1,12 +1,12 @@
 ---
-name: "MQTT Siemens S7 Connector"
+name: MQTT Siemens S7 Connector
 version: dev
 slug: mqtt-s7-connector
 description: "MQTT Siemens S7 connector to integrate Siemens PLC's with Home Assistant"
 url: https://github.com/dixi83/hassio-addons/mqtt-s7-connector
 init: false
 services:
-  - "mqtt:need"
+  - mqtt:need
 discovery:
   - mqtt
 arch:
