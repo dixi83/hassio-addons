@@ -17,7 +17,7 @@ Special thanks to Franck Nijhof aka [Frenck](https://github.com/frenck) for all 
 
 ## TODO
 
-- add additional log levels to mqtt-s7-connector 
+- add additional log levels to mqtt-s7-connector
 - add multi PLC connection support
 - config file and documentation json > yaml (yaml is easier then json)
 - add screenshots and documentation for configuration in TIA portal, STEP 7 and LOGO!Soft
