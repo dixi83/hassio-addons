@@ -1,0 +1,4 @@
+uses: rokroskar/workflow-run-cleanup-action
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  DEBUG: FALSE
