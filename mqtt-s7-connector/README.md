@@ -19,10 +19,10 @@ Special thanks to Franck Nijhof aka [Frenck](https://github.com/frenck) for all 
 
 ## TODO
 
-- keep in sync with original repo
-- add more Home Assistant [entities](https://developers.home-assistant.io/docs/core/entity)
+- config file and documentation json > yaml (easier and less chance of failures)
 - add multi PLC connection support
+- test and document support for Siemens LOGO! (it should work)[https://github.com/plcpeople/nodeS7/issues/37]
+- add more Home Assistant [entities](https://developers.home-assistant.io/docs/core/entity)
 - code cleanup
-- testing
 
-Pull requests welcome! 😄
+Pull requests welcome!
