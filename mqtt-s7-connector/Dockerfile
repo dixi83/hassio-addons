@@ -4,17 +4,20 @@ FROM ${BUILD_FROM}
 
 RUN apk add --update --no-cache \
         nodejs=20.11.0-r0 \
-        npm=10.2.5-r0
+        npm=10.2.5-r0 \
+        git=2.43.0-r0
+
+RUN git clone https://github.com/dixi83/mqtt-s7-connector.git /usr/src/mqtt-s7-connector
 
 # Copy root filesystem
 COPY rootfs /
 
 # Add Config Volume File
 VOLUME ["/config"]
-COPY ./rootfs/usr/src/app/config.example.json /config/
+COPY ./rootfs/usr/src/mqtt-s7-connector/config.example.json /config/
 
 # Building the application
-WORKDIR /usr/src/app
+WORKDIR /usr/src/mqtt-s7-connector
 RUN npm install --only=production
 
 # Build arguments

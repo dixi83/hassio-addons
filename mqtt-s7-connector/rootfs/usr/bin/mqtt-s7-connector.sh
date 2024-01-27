@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# -----------------------------------------------------------
-# This file is in etc/s6-overlay/s6-rc.d/start-fileapp/finish
-# -----------------------------------------------------------
+# -------------------------------------------------------------
+# This file is in etc/s6-overlay/s6-rc.d/mqtt-s7-connector/run
+# -------------------------------------------------------------
 
 # Tell the FileApp to unorphan each file processing.
-npm --prefix /usr/src/app start
+npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/config.json"
 
 # If the exit code is uncought, pass the second exit code received.
 if test "$1" -eq 256 ; then
