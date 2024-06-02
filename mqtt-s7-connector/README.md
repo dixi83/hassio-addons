@@ -13,8 +13,6 @@ The [DOCS.md](./DOCS.md) file will contain everything you need to know to make t
 - [Home Assistant Community Addons](https://github.com/hassio-addons/)
 - [mqtt-s7connector](https://github.com/timroemisch/mqtt-s7-connector) developed by Tim Roemisch
 
-Special thanks to Franck Nijhof aka [Frenck](https://github.com/frenck) for all the work he does for the Home Assistant Community. If you read this please consider sponsoring him.
-
 ## TODO
 
 - add additional log levels to mqtt-s7-connector
