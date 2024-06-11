@@ -16,5 +16,12 @@ map:
   - addon_config:rw
 options:
   log_level: info
+  config_file: config.yaml
+  config_files: 
+    - config_plc1.yaml
+    - config_plc2.yaml
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)
+  config_file: str?
+  config_files: 
+    - str?

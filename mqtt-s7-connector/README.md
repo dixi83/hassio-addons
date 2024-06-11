@@ -15,12 +15,12 @@ The [DOCS.md](./DOCS.md) file will contain everything you need to know to make t
 
 ## TODO
 
-- add additional log levels to mqtt-s7-connector
-- add multi PLC connection support
-- config file and documentation json > yaml (yaml is easier then json)
-- add screenshots and documentation for configuration in TIA portal, STEP 7 and LOGO!Soft
-- test and document support for Siemens LOGO! [it should work](https://github.com/plcpeople/nodeS7/issues/37)
-- add more Home Assistant [entities](https://developers.home-assistant.io/docs/core/entity)
-- code cleanup
+- [ ] add additional log levels to mqtt-s7-connector
+- [ ] add multi PLC connection support
+- [x] config file and documentation json > yaml (yaml is easier then json)
+- [ ] add screenshots and documentation for configuration in TIA portal, STEP 7 and LOGO!Soft
+- [ ] test and document support for Siemens LOGO! [it should work](https://github.com/plcpeople/nodeS7/issues/37)
+- [ ] add more Home Assistant [entities](https://developers.home-assistant.io/docs/core/entity)
+- [ ] code cleanup
 
 Pull requests welcome!
