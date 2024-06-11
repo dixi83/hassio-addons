@@ -59,7 +59,8 @@ There are several ways to get access to this folder and files, e.g.:
 - Visual Studio server add-on
 
 For the documentation of the config files please refer to this: 
-<!-- TODO: link to documentation -->
+[YAML](CONFIG_YAML.md)
+[JSON](CONFIG_JSON.md)
 
 ## Auto Discovery
 
