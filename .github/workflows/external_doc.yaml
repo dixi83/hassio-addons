@@ -2,8 +2,8 @@ name: Pull Files from Another Repository on Push
 env:
   SOURCE_REPO: dixi83/mqtt-s7-connector
   AUTOMATIC_MONITOR: true
-  FILES: "CONFIG_JSON.md,CONFIG_YAML.md" # seperate multiple entries with ,
-  FILES_NEW: "CONFIG_JSON.md,CONFIG_YAML.md" # seperate multiple entries with ,
+  FILES: CONFIG_JSON.md CONFIG_YAML.md
+  FILES_NEW: CONFIG_JSON.md CONFIG_YAML.md
   EXTRA: ls -a # do an extra command like renaming
   USERNAME: ${{ github.actor }}
   ADDRESS_SUFFIX: users.noreply.github.com
