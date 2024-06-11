@@ -4,7 +4,7 @@ env:
   AUTOMATIC_MONITOR: true
   FILES: "CONFIG_JSON.md,CONFIG_YAML.md" # seperate multiple entries with ,
   FILES_NEW: "CONFIG_JSON.md,CONFIG_YAML.md" # seperate multiple entries with ,
-  # EXTRA: mv LICENSE LICENSE_some_repo # do an extra command like renaming
+  EXTRA: ls -a # do an extra command like renaming
   USERNAME: ${{ github.actor }}
   ADDRESS_SUFFIX: users.noreply.github.com
   TOKEN_NAME: ACCESS_TOKEN # name of token defined in the target repo's settings, needed for private repos
