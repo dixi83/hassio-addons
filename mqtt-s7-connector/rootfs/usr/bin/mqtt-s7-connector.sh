@@ -56,16 +56,8 @@ if bashio::config.has_value 'config_files'; then # 'config_files' indicates ther
     first = false
   done
 else
-  if bashio::config.has_value 'config_file'; then # 'config_file' indicates there is only 1 config file
-    config_file = ${bashio::config 'config_file'}
-    command = 'npm --prefix /usr/src/mqtt-s7-connector start -- --yaml --config "/config/'
-    command += $config_file
-    command += '" --loglevel='
-    command += $loglevel
-  else # if none of the options if given, launch the default "config.json"
-    command = 'npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/config.json" --loglevel='
-    command += $loglevel
-  fi
+  command = 'npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/config.json" --loglevel='
+  command += $loglevel
 fi
 
 eval $command

@@ -1,6 +1,6 @@
 ---
 name: MQTT Siemens S7 Connector
-version: 0.1.3
+version: 0.1.4
 slug: mqtt-s7-connector
 description: "MQTT Siemens S7 connector to integrate Siemens PLC's with Home Assistant"
 url: https://github.com/dixi83/hassio-addons/mqtt-s7-connector
@@ -16,12 +16,10 @@ map:
   - addon_config:rw
 options:
   log_level: warning
-  config_file: config.yaml
   config_files: 
     - config_plc1.yaml
     - config_plc2.yaml
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)
-  config_file: str?
   config_files: 
     - str?
