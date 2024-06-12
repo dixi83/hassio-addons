@@ -1,9 +1,9 @@
-#!/bin/sh
-
-# -------------------------------------------------------------
-# This file is in etc/s6-overlay/s6-rc.d/mqtt-s7-connector/run
-# -------------------------------------------------------------
-
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Add-on: MQTT S7 Connector
+# Runs the mqtt-s7-connector
+# ==============================================================================
 declare -a command
 declare loglevel
 declare log_level
