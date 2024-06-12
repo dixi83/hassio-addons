@@ -4,6 +4,8 @@
 # This file is in etc/s6-overlay/s6-rc.d/mqtt-s7-connector/run
 # -------------------------------------------------------------
 
+echo $(bashio::config)
+
 declare loglevel
 declare -a command
 declare log_level
@@ -40,7 +42,7 @@ case log_level in
     ;;
   *)
     loglevel='4'
-    echo "## WARNING ## Unknown log level has been set, took 4 to continue the startup"
+    bashio::log.warning 'Unknown log level has been set, took 4 to continue the startup'
     ;;
 esac
 
@@ -53,11 +55,17 @@ if bashio::config.has_value 'config_files'; then
       command+=$config_file
       command+='" --loglevel='
       command+=$loglevel
+
+      bashio::log.debug 'DIXI: created command after first run:'
+      bashio::log.debug $command
     else
       command+='& npm --prefix /usr/src/mqtt-s7-connector start -- --yaml --config "/config/'
       command+=$config_file
       command+='" --loglevel='
       command+=$loglevel
+
+      bashio::log.debug 'DIXI: created command after first run:'
+      bashio::log.debug $command
     fi
     first=false
   done
@@ -66,6 +74,8 @@ else
   command+=$loglevel
 fi
 
+bashio::log.debug 'DIXI: created command:'
+bashio::log.debug $command
 eval $command
 
 # If the exit code is uncought, pass the second exit code received.
