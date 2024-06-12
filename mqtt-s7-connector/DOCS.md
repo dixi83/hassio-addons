@@ -2,8 +2,6 @@
 
 This project integrates [mqtt-s7connector developed by Tim Roemisch](https://github.com/timroemisch/mqtt-s7-connector) as an add-on for Home Assistant.
 
-<!-- Because the folder structure is had to be completely changed, I was not able anymore to keep the original repo in sync. I will try to fix this with scripting later on. -->
-
 This documentation file is edited so it will contain everything you need to know to make it work with your Home Assistant installation and your Siemens PLC.
 
 ## Purpose
@@ -36,7 +34,8 @@ Or add the repo by clicking:
 If you just need to connect to 1 PLC, use this configuration:
 ```yaml
   log_level: info
-  config_file: config.yaml
+  config_files: 
+    - config.yaml
 ```
 
 ### Multiple PLC's
@@ -50,7 +49,7 @@ If you have multiple PLC's use this as an example:
 
 ## Config File(s)
 
-After installing the Addon a created the `addon_configs\xxxxxxxx_mqtt-s7-connector` folder. Inside this folder you'll find the [`config.example.yaml`](./rootfs/usr/src/app/config.example.yaml) file. This file contains an example of the configuration. Copy the file and rename it to `config.json` as a starting point
+After installing the Addon a created the `addon_configs\xxxxxxxx_mqtt-s7-connector` folder. Inside this folder you'll find the [`config.example.yaml`](https://github.com/dixi83/mqtt-s7-connector/blob/master/config.example.yaml) file. This file contains an example of the configuration. Copy the file and rename it to `config.yaml` as a starting point. If you need multiple PLC connections then create for every connection a config file, and add the file names in your addon configuration.
 
 There are several ways to get access to this folder and files, e.g.:
 
@@ -59,14 +58,14 @@ There are several ways to get access to this folder and files, e.g.:
 - Visual Studio server add-on
 
 For the documentation of the config files please refer to this: 
-[YAML](CONFIG_YAML.md)
-[JSON](CONFIG_JSON.md)
+- [YAML](https://github.com/dixi83/mqtt-s7-connector/blob/master/CONFIG_YAML.md)
+- [JSON](https://github.com/dixi83/mqtt-s7-connector/blob/master/CONFIG_JSON.md)
 
 ## Auto Discovery
 
 This tool will send for each device an auto-discovery message over mqtt in the correct format defined by Home Assistant.
 
-The default mqtt topic is `homeassistant`, it can be changed in the config file. (See the [example](config.example.json#L10))
+The default mqtt topic is `homeassistant`, if for some reason this needs to be changed than it can be changed in the config file. (See the [example](https://github.com/dixi83/mqtt-s7-connector/blob/master/config.example.yaml#L9))
 
 ## License
 
