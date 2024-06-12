@@ -6,7 +6,7 @@
 
 # set log level >> 0: Trace, 1: Debug, 2: Info, 3: Notice, 4: Warning, 5: Error, 6: Fatal'
 if bashio::config.has_value 'log_level'; then
-  case bashio::config 'loglevel' in
+  case $(bashio::config 'loglevel') in
     'trace')
       loglevel = '0'
       ;;
