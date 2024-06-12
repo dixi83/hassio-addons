@@ -6,7 +6,7 @@
 
 # set log level >> 0: Trace, 1: Debug, 2: Info, 3: Notice, 4: Warning, 5: Error, 6: Fatal'
 if bashio::config.has_value 'log_level'; then
-  case $(bashio::config 'loglevel') in
+  case $(bashio::config 'log_level') in
     'trace')
       loglevel = '0'
       ;;
@@ -37,12 +37,11 @@ else
   loglevel = '4'
 fi
 
-# check if there is more then 1 connection is needed
-if bashio::config.has_value 'config_files'; then # 'config_files' indicates there are more than 1 config files
+if bashio::config.has_value 'config_files'; then 
   command = ''
   first = true
   for config_file in $(bashio::config 'config_files'); do
-    if first ; do
+    if first; then
       command += 'npm --prefix /usr/src/mqtt-s7-connector start -- --yaml --config "/config/'
       command += $config_file
       command += '" --loglevel='
