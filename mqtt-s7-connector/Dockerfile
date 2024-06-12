@@ -3,7 +3,7 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.5
 FROM ${BUILD_FROM}
 
 RUN apk add --update --no-cache \
-        nodejs=21.7.2-r0 \
+        nodejs-current=21.7.2-r0 \
         npm=10.2.5-r0 \
         git=2.43.4-r0 \
         \
