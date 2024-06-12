@@ -12,40 +12,38 @@ declare first
 log_level=$(bashio::string.lower "$(bashio::config log_level invalid)")
 
 if [ "$log_level" = "invalid" ]; then
-  bashio::log.magenta 'Received invalid log_level from config, fallback to info'
+  bashio::log.magenta 'Received invalid log_level from config, fallback to warning'
   log_level="warning"
 fi
 
 # set log level >> 0: Trace, 1: Debug, 2: Info, 3: Notice, 4: Warning, 5: Error, 6: Fatal'
 case "$log_level" in
-  'trace')
-    loglevel='0'
+  "trace")
+    loglevel="0"
     ;;
-  'debug')
-    loglevel='1'
+  "debug")
+    loglevel="1"
     ;;
-  'info')
-    loglevel='2'
+  "info")
+    loglevel="2"
     ;;
-  'notice')
-    loglevel='3'
+  "notice")
+    loglevel="3"
     ;;
-  'warning')
-    loglevel='4'
+  "warning")
+    loglevel="4"
     ;;
-  'error')
-    loglevel='5'
+  "error")
+    loglevel="5"
     ;;
-  'fatal')
-    loglevel='6'
+  "fatal")
+    loglevel="6"
     ;;
   *)
-    loglevel='4'
-    bashio::log.warning 'Unknown log level has been set, took 4 to continue the startup'
+    loglevel="4"
+    bashio::log.red 'Unknown log level has been set, took 4 to continue the startup'
     ;;
 esac
-bashio::log.debug 'got log_level:'
-bashio::log.debug "$loglevel"
 
 if bashio::config.has_value config_files; then 
   first=true
@@ -55,15 +53,11 @@ if bashio::config.has_value config_files; then
       command+=$config_file
       command+='" --loglevel='
       command+=$loglevel
-      bashio::log.debug 'DIXI: created command after first run:'
-      bashio::log.debug $command
     else
       command+='& npm --prefix /usr/src/mqtt-s7-connector start -- --yaml --config "/config/'
       command+=$config_file
       command+='" --loglevel='
       command+=$loglevel
-      bashio::log.debug 'DIXI: created command after first run:'
-      bashio::log.debug $command
     fi
     first=false
   done
@@ -72,8 +66,6 @@ else
   command+=$loglevel
 fi
 
-bashio::log.debug 'DIXI: created command:'
-bashio::log.debug '$command'
 eval $command
 
 # If the exit code is uncought, pass the second exit code received.
