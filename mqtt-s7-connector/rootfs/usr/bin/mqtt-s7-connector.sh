@@ -50,7 +50,7 @@ bashio::log.debug "$loglevel"
 if bashio::config.has_value config_files; then 
   first=true
   for config_file in $(bashio::config config_files); do
-    if first; then
+    if [ "$first" = true ]; then
       command+='npm --prefix /usr/src/mqtt-s7-connector start -- --yaml --config "/config/'
       command+=$config_file
       command+='" --loglevel='
@@ -73,7 +73,7 @@ else
 fi
 
 bashio::log.debug 'DIXI: created command:'
-bashio::log.debug "$command"
+bashio::log.debug '$command'
 eval $command
 
 # If the exit code is uncought, pass the second exit code received.
