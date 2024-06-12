@@ -7,6 +7,7 @@
 declare -a command
 declare loglevel
 declare log_level
+declare first
 
 log_level=$(bashio::string.lower "$(bashio::config log_level invalid)")
 
@@ -44,7 +45,7 @@ case "$log_level" in
     ;;
 esac
 bashio::log.debug 'got log_level:'
-bashio::log.debug $(loglevel)
+bashio::log.debug "$loglevel"
 
 if bashio::config.has_value config_files; then 
   first=true
@@ -72,7 +73,7 @@ else
 fi
 
 bashio::log.debug 'DIXI: created command:'
-bashio::log.debug $command
+bashio::log.debug "$command"
 eval $command
 
 # If the exit code is uncought, pass the second exit code received.
