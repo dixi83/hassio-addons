@@ -4,8 +4,6 @@
 # This file is in etc/s6-overlay/s6-rc.d/mqtt-s7-connector/run
 # -------------------------------------------------------------
 
-bashio::log.debug $(bashio::config)
-
 declare -a command
 declare loglevel
 declare log_level
@@ -18,7 +16,7 @@ if [ "$log_level" = "invalid" ]; then
 fi
 
 # set log level >> 0: Trace, 1: Debug, 2: Info, 3: Notice, 4: Warning, 5: Error, 6: Fatal'
-case bashio::config log_level in
+case "$log_level" in
   'trace')
     loglevel='0'
     ;;
@@ -48,16 +46,14 @@ esac
 bashio::log.debug 'got log_level:'
 bashio::log.debug $(loglevel)
 
-if bashio::config.has_value 'config_files'; then 
-  command=''
+if bashio::config.has_value config_files; then 
   first=true
-  for config_file in $(bashio::config 'config_files'); do
+  for config_file in $(bashio::config config_files); do
     if first; then
       command+='npm --prefix /usr/src/mqtt-s7-connector start -- --yaml --config "/config/'
       command+=$config_file
       command+='" --loglevel='
       command+=$loglevel
-
       bashio::log.debug 'DIXI: created command after first run:'
       bashio::log.debug $command
     else
@@ -65,7 +61,6 @@ if bashio::config.has_value 'config_files'; then
       command+=$config_file
       command+='" --loglevel='
       command+=$loglevel
-
       bashio::log.debug 'DIXI: created command after first run:'
       bashio::log.debug $command
     fi
