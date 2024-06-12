@@ -28,6 +28,10 @@ if bashio::config.has_value 'log_level'; then
     'fatal')
       loglevel = '6'
       ;;
+    *)
+      loglevel = '4'
+      echo "## WARNING ## Unknown log level has been set, took 4 to continue the startup"
+      ;;
   esac
 else
   loglevel = '4'

@@ -15,7 +15,7 @@ arch:
 map:
   - addon_config:rw
 options:
-  log_level: info
+  log_level: warning
   config_file: config.yaml
   config_files: 
     - config_plc1.yaml
