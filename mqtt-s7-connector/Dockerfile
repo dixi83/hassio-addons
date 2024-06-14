@@ -15,6 +15,7 @@ COPY rootfs /
 # Add Config Volume File
 VOLUME ["/config"]
 RUN cp /usr/src/mqtt-s7-connector/config.example.json /config
+RUN cp /usr/src/mqtt-s7-connector/config.example.yaml /config
 
 # Building the application
 WORKDIR /usr/src/mqtt-s7-connector
