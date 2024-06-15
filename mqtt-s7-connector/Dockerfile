@@ -7,15 +7,15 @@ RUN apk add --update --no-cache \
         npm=10.2.5-r0 \
         git=2.43.4-r0 \
         \
-        && git clone https://github.com/dixi83/mqtt-s7-connector.git /usr/src/mqtt-s7-connector
+        && git clone https://github.com/dixi83/mqtt-s7-connector.git /usr/src/mqtt-s7-connector \
+        && cp /usr/src/mqtt-s7-connector/config.example.json /config \
+        && cp /usr/src/mqtt-s7-connector/config.example.json /config
 
 # Copy root filesystem
 COPY rootfs /
 
 # Add Config Volume File
 VOLUME ["/config"]
-RUN cp /usr/src/mqtt-s7-connector/config.example.json /config
-RUN cp /usr/src/mqtt-s7-connector/config.example.yaml /config
 
 # Building the application
 WORKDIR /usr/src/mqtt-s7-connector
