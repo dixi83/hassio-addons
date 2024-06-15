@@ -2,6 +2,8 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.5
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+VOLUME ["/config"]
+
 RUN apk add --update --no-cache \
         nodejs-current=21.7.2-r0 \
         npm=10.2.5-r0 \
@@ -15,7 +17,6 @@ RUN apk add --update --no-cache \
 COPY rootfs /
 
 # Add Config Volume File
-VOLUME ["/config"]
 
 # Building the application
 WORKDIR /usr/src/mqtt-s7-connector
