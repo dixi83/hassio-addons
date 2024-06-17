@@ -35,11 +35,11 @@ jobs:
 
       - name: Checkout
         if: env.exiting1 != 'true'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Checkout source with token and branch
         if: env.exiting1 != 'true' && env.THE_SECRET != 'default_value' && env.SOURCE_BRANCH
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ${{ env.SOURCE_REPO }}
           ref: ${{ env.SOURCE_BRANCH }}
@@ -48,7 +48,7 @@ jobs:
 
       - name: Checkout source with token but without branch
         if: env.exiting1 != 'true' && env.THE_SECRET != 'default_value' && !env.SOURCE_BRANCH
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ${{ env.SOURCE_REPO }}
           token: ${{ secrets[env.TOKEN_NAME] }}
@@ -56,7 +56,7 @@ jobs:
 
       - name: Checkout source without token but with branch
         if: env.exiting1 != 'true' && env.THE_SECRET == 'default_value' && env.SOURCE_BRANCH
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ${{ env.SOURCE_REPO }}
           ref: ${{ env.SOURCE_BRANCH }}
@@ -64,7 +64,7 @@ jobs:
 
       - name: Checkout source without token and without branch
         if: env.exiting1 != 'true' && env.THE_SECRET == 'default_value' && !env.SOURCE_BRANCH
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ${{ env.SOURCE_REPO }}
           path: ${{ env.PATH_SOURCE_CHECKOUT }}
