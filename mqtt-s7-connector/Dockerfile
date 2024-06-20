@@ -17,7 +17,7 @@ git=2.43.4-r0 \
 COPY rootfs /
 
 # Add Config Volume File
-#VOLUME [ "/config" ]
+VOLUME [ "/config" ]
 #COPY /usr/src/mqtt-s7-connector/config.example.* /config/
 
 # Building the application
