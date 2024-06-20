@@ -1,0 +1,7 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+
+bashio::log.info "Copying example config files..."
+
+cp -f /usr/src/mqtt-s7-connector/config.example.yaml /config/config.example.yaml
+cp -f /usr/src/mqtt-s7-connector/config.example.json /config/config.example.json
