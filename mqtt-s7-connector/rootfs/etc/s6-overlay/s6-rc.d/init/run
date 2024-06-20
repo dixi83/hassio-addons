@@ -1,7 +1,10 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
-
-# bashio::log.info "Copying example config files..."
+# ==============================================================================
+# Home Assistant Add-on: MQTT S7 Connector
+# Copies the example config files
+# ==============================================================================
+bashio::log.info "Copying example config files..."
 
 cp -n /usr/src/mqtt-s7-connector/config.example.yaml /config/
 cp -n /usr/src/mqtt-s7-connector/config.example.json /config/
