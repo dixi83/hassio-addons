@@ -2,16 +2,14 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.5
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-VOLUME ["/config"]
-
 RUN apk add --update --no-cache \
         nodejs-current=21.7.2-r0 \
         npm=10.2.5-r0 \
         git=2.43.4-r0 \
         \
         && git clone https://github.com/dixi83/mqtt-s7-connector.git /usr/src/mqtt-s7-connector \
-        && cp /usr/src/mqtt-s7-connector/config.example.json /config \
-        && cp /usr/src/mqtt-s7-connector/config.example.json /config
+        && cp -f /usr/src/mqtt-s7-connector/config.example.yaml /config/ \
+        && cp -f /usr/src/mqtt-s7-connector/config.example.json /config/
 
 # Copy root filesystem
 COPY rootfs /
