@@ -8,8 +8,8 @@ RUN apk add --update --no-cache \
         git=2.43.4-r0 \
         \
         && git clone https://github.com/dixi83/mqtt-s7-connector.git /usr/src/mqtt-s7-connector \
-        && cp -f /usr/src/mqtt-s7-connector/config.example.yaml /config/ \
-        && cp -f /usr/src/mqtt-s7-connector/config.example.json /config/
+        && cp -f /usr/src/mqtt-s7-connector/config.example.yaml /config/config.example.yaml \
+        && cp -f /usr/src/mqtt-s7-connector/config.example.json /config/config.example.json
 
 # Copy root filesystem
 COPY rootfs /
