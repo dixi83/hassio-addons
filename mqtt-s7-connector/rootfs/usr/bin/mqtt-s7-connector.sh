@@ -4,7 +4,7 @@
 # Home Assistant Add-on: MQTT S7 Connector
 # Runs the mqtt-s7-connector
 # ==============================================================================
-declare -a command
+declare command
 declare loglevel
 declare log_level
 declare first
@@ -49,21 +49,21 @@ if bashio::config.has_value config_files; then
   first=true
   for config_file in $(bashio::config config_files); do
     if [ "$first" = true ]; then
-      command+='npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/'
-      command+=$config_file
-      command+='" --loglevel='
-      command+=$loglevel
+      command+=('npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/')
+      command+=($config_file)
+      command+=('" --loglevel=')
+      command+=($loglevel)
     else
-      command+='& npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/'
-      command+=$config_file
-      command+='" --loglevel='
-      command+=$loglevel
+      command+=('& npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/')
+      command+=($config_file)
+      command+=('" --loglevel=')
+      command+=($loglevel)
     fi
     first=false
   done
 else
   command='npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/config.json" --loglevel='
-  command+=$loglevel
+  command+=($loglevel)
 fi
 
 eval $command
