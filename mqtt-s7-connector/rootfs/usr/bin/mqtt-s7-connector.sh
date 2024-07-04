@@ -66,7 +66,7 @@ else
   command+=("$loglevel")
 fi
 
-eval "$command"
+eval "${command[@]}"
 
 # If the exit code is uncought, pass the second exit code received.
 if test "$1" -eq 256 ; then
