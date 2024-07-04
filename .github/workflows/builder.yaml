@@ -1,9 +1,12 @@
+---
 name: Builder
 
+# yamllint disable rule:line-length
 env:
   BUILD_ARGS: "--test"
   MONITORED_FILES: "build.yaml config.yaml Dockerfile rootfs"
 
+# yamllint disable-line rule:truthy
 on:
   push:
     branches:

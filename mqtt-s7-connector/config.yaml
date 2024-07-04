@@ -1,4 +1,5 @@
 ---
+# yamllint disable rule:line-length
 name: MQTT Siemens S7 Connector
 version: 1.0.0
 slug: mqtt-s7-connector
@@ -16,9 +17,9 @@ map:
   - addon_config:rw
 options:
   log_level: warning
-  config_files: 
+  config_files:
     - config.yaml
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)
-  config_files: 
+  config_files:
     - str?

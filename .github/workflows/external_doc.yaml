@@ -1,13 +1,14 @@
 name: Pull Files from Another Repository on Push
+# yamllint disable rule:line-length
 env:
   SOURCE_REPO: dixi83/mqtt-s7-connector
   AUTOMATIC_MONITOR: true
   FILES: CONFIG_JSON.md CONFIG_YAML.md
   FILES_NEW: CONFIG_JSON.md CONFIG_YAML.md
-  EXTRA: pwd # do an extra command like renaming
+  EXTRA: pwd  # do an extra command like renaming
   USERNAME: ${{ github.actor }}
   ADDRESS_SUFFIX: users.noreply.github.com
-  TOKEN_NAME: ACCESS_TOKEN # name of token defined in the target repo's settings, needed for private repos
+  TOKEN_NAME: ACCESS_TOKEN  # name of token defined in the target repo's settings, needed for private repos
   # SOURCE_BRANCH: source_alternate_branch # uncomment to takes files from a non default source branch
   # TARGET_BRANCH: target_alternate_branch # uncomment to monitor a non default target branch
   # TARGET_PATH: target_alternate_path # uncomment to monitor a non default target branch
@@ -15,7 +16,8 @@ env:
   PATH_SOURCE_CHECKOUT: .
   THE_SECRET: ${{ secrets.TOKEN_NAME || 'default_value' }}
 
-on: # Remove # below for non default branches
+# yamllint disable-line rule:truthy
+on:  # Remove # below for non default branches
   workflow_dispatch:
   push:
 #    branches:
@@ -84,7 +86,7 @@ jobs:
             echo "No changes detected. Exiting."
             echo "exiting2=true" >> $GITHUB_ENV
           fi
-          
+
       - name: Commit
         if: env.exiting1 != 'true' && env.exiting2 != 'true'
         run: |
