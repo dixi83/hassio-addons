@@ -50,23 +50,23 @@ if bashio::config.has_value config_files; then
   for config_file in $(bashio::config config_files); do
     if [ "$first" = true ]; then
       command+=('npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/')
-      command+=($config_file)
+      command+=("$config_file")
       command+=('" --loglevel=')
-      command+=($loglevel)
+      command+=("$loglevel")
     else
       command+=('& npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/')
-      command+=($config_file)
+      command+=("$config_file")
       command+=('" --loglevel=')
-      command+=($loglevel)
+      command+=("$loglevel")
     fi
     first=false
   done
 else
-  command='npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/config.json" --loglevel='
-  command+=($loglevel)
+  command=('npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/config.json" --loglevel=')
+  command+=("$loglevel")
 fi
 
-eval $command
+eval "$command"
 
 # If the exit code is uncought, pass the second exit code received.
 if test "$1" -eq 256 ; then
