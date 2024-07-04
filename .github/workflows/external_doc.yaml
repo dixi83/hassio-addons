@@ -1,3 +1,4 @@
+---
 name: Pull Files from Another Repository on Push
 # yamllint disable rule:line-length
 env:
