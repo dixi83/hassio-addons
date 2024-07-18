@@ -3,12 +3,13 @@ name: CI
 
 # yamllint disable-line rule:truthy
 on:
-  workflow_call:
-    inputs:
-      slug:
-        description: Overrides the detected slug
-        required: false
-        type: string
+  push:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
