@@ -113,7 +113,6 @@ jobs:
       - lint-json
       - lint-prettier
       - lint-shellcheck
-      - lint-yamllint
     runs-on: ubuntu-latest
     strategy:
       matrix:
