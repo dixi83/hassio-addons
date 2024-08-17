@@ -47,32 +47,22 @@ case "$log_level" in
 esac
 
 if bashio::config.has_value config_files; then 
+  command=''
   first=true
   for config_file in $(bashio::config config_files); do
     if [ "$first" = true ]; then
-      command+=('npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/')
-      command+=("$config_file")
-      command+=('" --loglevel=')
-      command+=("$loglevel")
+      command=("npm --prefix /usr/src/mqtt-s7-connector start -- --config \"/config/${config_file}\" --loglevel=${loglevel}")
     else
-      command+=(' & npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/')
-      command+=("$config_file")
-      command+=('" --loglevel=')
-      command+=("$loglevel")
+      command=("${command} & npm --prefix /usr/src/mqtt-s7-connector start -- --config \"/config/${config_file}\" --loglevel=${loglevel}")
     fi
     first=false
   done
 else
-  command=('npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/config.json" --loglevel=')
-  command+=("$loglevel")
+  bashio::log.red 'No config files configured! fallback to config.json'
+  command=("npm --prefix /usr/src/mqtt-s7-connector start -- --config \"/config/config.json\" --loglevel=${loglevel}")
 fi
 
-for cmd in "${command[@]}"
-do
-  bashio::log.blue 'created command:'
-  bashio::log.blue "$cmd"
-  eval "$cmd"
-done
+eval "$command"
 
 # If the exit code is uncought, pass the second exit code received.
 if test "$1" -eq 256 ; then
