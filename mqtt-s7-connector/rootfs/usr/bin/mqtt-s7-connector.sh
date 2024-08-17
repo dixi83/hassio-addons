@@ -14,6 +14,7 @@ log_level=$(bashio::string.lower "$(bashio::config log_level invalid)")
 if [ "$log_level" = "invalid" ]; then
   bashio::log.magenta 'Received invalid log_level from config, fallback to warning'
   log_level="warning"
+  loglevel=4
 fi
 
 # set log level >> 0: Trace, 1: Debug, 2: Info, 3: Notice, 4: Warning, 5: Error, 6: Fatal'
@@ -54,7 +55,7 @@ if bashio::config.has_value config_files; then
       command+=('" --loglevel=')
       command+=("$loglevel")
     else
-      command+=('& npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/')
+      command+=(' & npm --prefix /usr/src/mqtt-s7-connector start -- --config "/config/')
       command+=("$config_file")
       command+=('" --loglevel=')
       command+=("$loglevel")
@@ -68,6 +69,8 @@ fi
 
 for cmd in "${command[@]}"
 do
+  bashio::log.blue 'created command:'
+  bashio::log.blue "$cmd"
   eval "$cmd"
 done
 
