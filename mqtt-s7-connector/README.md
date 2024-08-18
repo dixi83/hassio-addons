@@ -18,8 +18,9 @@ The [DOCS.md](./DOCS.md) file will contain everything you need to know to make t
 - [x] add additional log levels to mqtt-s7-connector
 - [x] add multi PLC connection support
 - [x] config file and documentation json > yaml (yaml is easier then json)
+- [ ] rename object `devices` to `enities` (we are creating entities here not devices, __this will be a breaking update!__)
+- [ ] test and document support for Siemens LOGO! with tsap_id's [it should work](https://github.com/plcpeople/nodeS7/issues/37)
 - [ ] add screenshots and documentation for configuration in TIA portal, STEP 7 and LOGO!Soft
-- [ ] test and document support for Siemens LOGO! [it should work](https://github.com/plcpeople/nodeS7/issues/37)
 - [ ] add more Home Assistant [entities](https://developers.home-assistant.io/docs/core/entity)
 - [ ] code cleanup
 

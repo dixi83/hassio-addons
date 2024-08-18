@@ -24,6 +24,7 @@ This documentation file is edited so it will contain everything you need to know
     - [`unit_of_measurement` option](#unit_of_measurement-option)
     - [`set_plc` option](#set_plc-option)
     - [`write_back` option](#write_back-option)
+  - [Device name](#device-name)
 - [Auto Discovery](#auto-discovery)
 - [License](#license)
 
@@ -144,7 +145,7 @@ mqtt:
 
 #### `devices` Object
 
-\_list of all registered devices\_\_
+_list of all registered devices_
 
 the list of devices is implemented as an array in yaml.  
 each device has its own entry in this list and will be configured there.
@@ -317,6 +318,27 @@ state:
   set_plc: DB56,X150.1,
   write_back: true
 ```
+### Device name
+
+If your device has multiple sensors/lights/switches etc., you can set for each item the `device_name` propertie for items that belong together. E.g. a device as multiple a garage door has 2 switches 1 for lockimng it and 1 open/closing the door and even a temperature sensor for the motor. This could look like this:
+```
+  - name: Garage door open/close
+    type: binarycover
+    currentPosition: DB56,X0.0
+    targetPosition: DB56,X0.1
+    device_name: Garage door
+  - name: Garage door lock
+    type: switch
+    state: DB56,X0.3
+    device_name: Garage door
+  - name: Motor temperature
+    type: sensor
+    state: DB56,REAL2
+    device_name: Garage door
+```
+![garage door example result](images/HA-device.png)
+
+
 
 ## Auto Discovery
 
