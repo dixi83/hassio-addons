@@ -52,18 +52,18 @@ if bashio::config.has_value config_files; then
   first=true
   for config_file in $(bashio::config config_files); do
     if [ "$first" = true ]; then
-      command=("npm --prefix /usr/src/mqtt-s7-connector start -- --addonversion \"${version}\" --config \"/config/${config_file}\" --loglevel=${loglevel}")
+      command="npm --prefix /usr/src/mqtt-s7-connector start -- --addonversion \"${version}\" --config \"/config/${config_file}\" --loglevel=${loglevel}"
     else
-      command=("${command} & npm --prefix /usr/src/mqtt-s7-connector start -- --addonversion \"${version}\" --config \"/config/${config_file}\" --loglevel=${loglevel}")
+      command="${command} & npm --prefix /usr/src/mqtt-s7-connector start -- --addonversion \"${version}\" --config \"/config/${config_file}\" --loglevel=${loglevel}"
     fi
     first=false
   done
 else
   bashio::log.red 'No config files configured! fallback to config.json'
-  command=("npm --prefix /usr/src/mqtt-s7-connector start -- --addonversion \"${version}\" --config \"/config/config.json\" --loglevel=${loglevel}")
+  command="npm --prefix /usr/src/mqtt-s7-connector start -- --addonversion \"${version}\" --config \"/config/config.json\" --loglevel=${loglevel}"
 fi
 
-eval "$command"
+eval $command
 
 # If the exit code is uncought, pass the second exit code received.
 if test "$1" -eq 256 ; then
