@@ -318,9 +318,11 @@ state:
   set_plc: DB56,X150.1,
   write_back: true
 ```
+
 ### Device name
 
 If your device has multiple sensors/lights/switches etc., you can set for each item the `device_name` propertie for items that belong together. E.g. a device as multiple a garage door has 2 switches 1 for lockimng it and 1 open/closing the door and even a temperature sensor for the motor. This could look like this:
+
 ```
   - name: Garage door open/close
     type: binarycover
@@ -336,9 +338,8 @@ If your device has multiple sensors/lights/switches etc., you can set for each i
     state: DB56,REAL2
     device_name: Garage door
 ```
+
 ![garage door example result](images/HA-device.png)
-
-
 
 ## Auto Discovery
 

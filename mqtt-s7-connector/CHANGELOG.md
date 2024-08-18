@@ -1,6 +1,6 @@
 # Changelog
 
-__Please note:__
+**Please note:**
 Next update will contain the preparations and for the object rename form `devices` to `enities`.
 
 ## 1.0.4
