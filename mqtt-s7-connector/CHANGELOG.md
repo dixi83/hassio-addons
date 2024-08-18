@@ -1,7 +1,11 @@
 # Changelog
 
 **Please note:**
-Next update will contain the preparations and for the object rename form `devices` to `enities`.
+Soon the update will contain the preparations and for the object rename form `devices` to `enities`.
+
+## 1.0.5
+
+- Updated start script, which I was forgotten...
 
 ## 1.0.4
 
