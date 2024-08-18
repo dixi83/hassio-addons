@@ -63,7 +63,7 @@ else
   command="npm --prefix /usr/src/mqtt-s7-connector start -- --addonversion \"${version}\" --config \"/config/config.json\" --loglevel=${loglevel}"
 fi
 
-eval $command
+eval "$command"
 
 # If the exit code is uncought, pass the second exit code received.
 if test "$1" -eq 256 ; then
