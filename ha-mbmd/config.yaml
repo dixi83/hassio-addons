@@ -1,7 +1,7 @@
 ---
 # yamllint disable rule:line-length
 name: ModBus Measurement Daemon
-version: 0.0.2
+version: 0.0.3
 slug: ha-mbmd
 description: "A daemon for collecting measurement data from smart meters and grid inverters over modbus."
 url: https://github.com/dixi83/hassio-addons/ha-mbmd

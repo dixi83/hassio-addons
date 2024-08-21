@@ -6,7 +6,7 @@
 # ==============================================================================
 declare command
 
-command="/root/mbmd/mbmd run"
+command="/root/mbmd/mbmd run --config /config/mbmd.yaml"
 
 eval "$command"
 
