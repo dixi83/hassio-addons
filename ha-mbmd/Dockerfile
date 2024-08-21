@@ -3,8 +3,8 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.5
 FROM ${BUILD_FROM}
 
 RUN apk add --update --no-cache \
-make=4.4.1-r2
-go=1.22.6-r0
+make=4.4.1-r2 \
+go=1.22.6-r0 \
 git=2.43.4-r0 \
 \
 && git clone https://github.com/volkszaehler/mbmd.git /root/mbmd
