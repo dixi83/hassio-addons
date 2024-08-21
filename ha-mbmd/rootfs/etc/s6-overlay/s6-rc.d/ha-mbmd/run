@@ -1,0 +1,10 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Add-on: ModBus Measurement Daemon
+# Runs the ha-mbmd
+# ==============================================================================
+
+bashio::log.info "Starting: ha-mbmd"
+
+exec /usr/bin/ha-mbmd.sh
