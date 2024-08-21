@@ -6,7 +6,7 @@
 # ==============================================================================
 declare command
 
-command="/usr/local/bin/mbmd run"
+command="/root/mbmd/mbmd run"
 
 eval "$command"
 
