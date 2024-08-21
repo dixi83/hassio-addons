@@ -1,5 +1,3 @@
-# Changelog
-
 **Please note:**
 Soon the update will contain the preparations and for the object rename form `devices` to `enities`.
 
