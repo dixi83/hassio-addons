@@ -3,6 +3,10 @@ Soon the update will contain the preparations and for the object rename form `de
 
 ## 1.0.5
 
+- updated git package from 2.43.4-r0 to 2.43.5-r0
+
+## 1.0.5
+
 - Updated start script, which I was forgotten...
 
 ## 1.0.4

@@ -5,7 +5,7 @@ FROM ${BUILD_FROM}
 RUN apk add --update --no-cache \
 nodejs-current=21.7.2-r0 \
 npm=10.2.5-r0 \
-git=2.43.4-r0 \
+git=2.43.5-r0 \
 \
 && git clone https://github.com/dixi83/mqtt-s7-connector.git /usr/src/mqtt-s7-connector
 
