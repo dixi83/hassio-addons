@@ -4,8 +4,8 @@ FROM ${BUILD_FROM}
 
 RUN apk add --update --no-cache \
 make=4.4.1-r2 \
-go=1.21.10-r0 \
-git=2.43.4-r0 \
+go=1.22.7-r0 \
+git=2.45.2-r0 \
 \
 && git clone https://github.com/volkszaehler/mbmd.git /root/mbmd
 
