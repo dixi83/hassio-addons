@@ -3,9 +3,9 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.9
 FROM ${BUILD_FROM}
 
 RUN apk add --update --no-cache \
-nodejs-current=21.7.2-r0 \
-npm=10.2.5-r0 \
-git=2.43.5-r0 \
+nodejs-current=21.7.3-r0 \
+npm=10.8.0-r0 \
+git=2.45.2-r0 \
 \
 && git clone https://github.com/dixi83/mqtt-s7-connector.git /usr/src/mqtt-s7-connector
 
