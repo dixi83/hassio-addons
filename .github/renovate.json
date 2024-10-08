@@ -40,6 +40,17 @@
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
+    },
+    {
+      "datasources": [
+        "repology"
+      ],
+      "packagePatterns": [
+        "^alpine_3_20/"
+      ],
+      "separateMajorMinor": false,
+      "groupName": "alpine packages",
+      "groupSlug": "alpine"
     }
   ]
 }
