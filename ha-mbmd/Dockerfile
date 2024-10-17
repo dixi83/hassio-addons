@@ -1,11 +1,18 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:16.3.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.5
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+# renovate: datasource=repology depName=alpine_3_20/make versioning=loose
+ENV MAKE_VERSION="4.4.1-r2"
+# renovate: datasource=repology depName=alpine_3_20/go versioning=loose
+ENV GO_VERSION="1.22.8-r0"
+# renovate: datasource=repology depName=alpine_3_20/git versioning=loose
+ENV GIT_VERSION="2.45.2-r0"
+
 RUN apk add --update --no-cache \
-make=4.4.1-r2 \
-go=1.22.8-r0 \
-git=2.45.2-r0 \
+make=${MAKE_VERSION} \
+go=${GO_VERSION} \
+git=${GIT_VERSION} \
 \
 && git clone https://github.com/volkszaehler/mbmd.git /root/mbmd
 
