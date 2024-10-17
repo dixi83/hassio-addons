@@ -2,10 +2,18 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:16.3.3
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+# renovate: datasource=repology depName=alpine_3_20/nodejs-current versioning=loose
+ENV NODEJS_VERSION="21.7.3-r0"
+# renovate: datasource=repology depName=alpine_3_20/npm versioning=loose
+ENV NPM_VERSION="10.8.0-r0"
+# renovate: datasource=repology depName=alpine_3_20/git versioning=loose
+ENV GIT_VERSION="2.45.2-r0"
+
+
 RUN apk add --update --no-cache \
-nodejs-current=21.7.3-r0 \
-npm=10.8.0-r0 \
-git=2.45.2-r0 \
+nodejs-current=${NODEJS_VERSION} \
+npm=${NPM_VERSION} \
+git=${GIT_VERSION} \
 \
 && git clone https://github.com/dixi83/mqtt-s7-connector.git /usr/src/mqtt-s7-connector
 
