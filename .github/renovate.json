@@ -2,19 +2,13 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rebaseWhen": "behind-base-branch",
   "dependencyDashboard": true,
-  "labels": [
-    "dependencies",
-    "no-stale"
-  ],
+  "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "/Dockerfile$",
-        "/build.yaml$"
-      ],
+      "fileMatch": ["/Dockerfile$", "/build.yaml$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
@@ -24,9 +18,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "(^|/)Dockerfile$"
-      ],
+      "fileMatch": ["(^|/)Dockerfile$"],
       "matchStrings": [
         "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"?(?<currentValue>.*?)\"?\\s"
       ],
@@ -35,38 +27,25 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": [
-        "repology"
-      ],
+      "matchDatasources": ["repology"],
       "automerge": true
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": [
-        "docker"
-      ]
+      "matchDatasources": ["docker"]
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     },
     {
-      "matchDatasources": [
-        "repology"
-      ],
+      "matchDatasources": ["repology"],
       "separateMajorMinor": false,
       "groupName": "alpine packages",
       "groupSlug": "alpine",
-      "matchPackageNames": [
-        "/^alpine_3_20//"
-      ]
+      "matchPackageNames": ["/^alpine_3_20//"]
     }
   ]
 }
