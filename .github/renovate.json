@@ -45,7 +45,7 @@
       "separateMajorMinor": false,
       "groupName": "alpine packages",
       "groupSlug": "alpine",
-      "matchPackageNames": ["/^alpine_3_20//"]
+      "matchPackageNames": ["/^alpine_3_21//"]
     }
   ]
 }
