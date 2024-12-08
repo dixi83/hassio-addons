@@ -5,9 +5,9 @@ FROM ${BUILD_FROM}
 # renovate: datasource=repology depName=alpine_3_20/make versioning=loose
 ENV MAKE_VERSION="4.4.1-r2"
 # renovate: datasource=repology depName=alpine_3_20/go versioning=loose
-ENV GO_VERSION="1.22.10-r0"
+ENV GO_VERSION="1.23.4-r0"
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
-ENV GIT_VERSION="2.45.2-r0"
+ENV GIT_VERSION="2.47.1-r0"
 
 RUN apk add --update --no-cache \
 make=${MAKE_VERSION} \
