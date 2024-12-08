@@ -3,7 +3,7 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:17.0.0
 FROM ${BUILD_FROM}
 
 # renovate: datasource=repology depName=alpine_3_20/nodejs-current versioning=loose
-ENV NODEJS_VERSION="23.2.0-r0"
+ENV NODEJS_VERSION="23.2.0-r1"
 # renovate: datasource=repology depName=alpine_3_20/npm versioning=loose
 ENV NPM_VERSION="10.9.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
