@@ -1,7 +1,11 @@
 **Please note:**
 Soon the update will contain the preparations and for the object rename form `devices` to `enities`.
 
-## 1.0.5
+## 1.0.7
+
+- Added `number` device
+
+## 1.0.6
 
 - updated git package from 2.43.4-r0 to 2.43.5-r0
 
