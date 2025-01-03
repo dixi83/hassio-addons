@@ -1,6 +1,15 @@
 **Please note:**
 Soon the update will contain the preparations and for the object rename form `devices` to `enities`.
 
+## 1.0.8
+
+- fix(sensor): Missing unit_of_measurement in ha-discovery payload ( @psi-4ward )
+- feat(sensor): Support more ha-discovery options ( @psi-4ward )
+- fix: Value gets not published if it is 0 ( @psi-4ward )
+- feat(device): Add support for "manufacturer" in device section ( @psi-4ward )
+- feat(device): Generate more unique mqttNames when name and device_nam… ( @psi-4ward )
+- feat(config): Add example how to configure a device with sensors ( @psi-4ward )
+
 ## 1.0.7
 
 - Added `number` device
