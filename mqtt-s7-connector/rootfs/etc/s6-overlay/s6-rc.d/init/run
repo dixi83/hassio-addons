@@ -8,3 +8,8 @@ bashio::log.info "Copying example config files..."
 
 cp -n /usr/src/mqtt-s7-connector/config.example.yaml /config/
 cp -n /usr/src/mqtt-s7-connector/config.example.json /config/
+
+bashio::log.info "Copying validation files..."
+mkdir -p /config/config_validator
+cp -n /usr/src/mqtt-s7-connector/config_schema.yaml /config/config_validator
+cp -n /usr/src/mqtt-s7-connector/config_validator.js /config/config_validator
