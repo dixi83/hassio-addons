@@ -1,9 +1,0 @@
-#!/command/with-contenv bashio
-# shellcheck shell=bash
-# ==============================================================================
-# Home Assistant Add-on: ModBus Measurement Daemon
-# Copies the example config files
-# ==============================================================================
-bashio::log.info "Copying example config files..."
-
-cp -n /root/mbmd/mbmd.dist.yaml /config/
