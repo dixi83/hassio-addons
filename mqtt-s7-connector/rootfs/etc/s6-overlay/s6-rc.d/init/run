@@ -6,5 +6,4 @@
 # ==============================================================================
 bashio::log.info "Copying example config files..."
 
-cp -n /usr/src/mqtt-s7-connector/config.example.yaml /config/
-cp -n /usr/src/mqtt-s7-connector/config.example.json /config/
+yes | cp -f /usr/src/mqtt-s7-connector/config.example.yaml /config/
