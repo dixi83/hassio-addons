@@ -188,7 +188,6 @@ The device type categories are based on the categories from Home Assistant
 Current list of supported device types with supported attributes:
 
 - light
-
   - `state` _(X)_  
     on/off state of the device
 
@@ -196,18 +195,15 @@ Current list of supported device types with supported attributes:
     value between 0-255
 
 - sensor
-
   - `state` _(X/BYTE/REAL)_  
     state of device  
     _is readonly by default_
 
 - switch
-
   - `state` _(X)_  
     on/off state of the device
 
 - climate
-
   - `target_temperature` _(REAL)_
 
   - `current_temperature` _(REAL)_  
@@ -215,7 +211,6 @@ Current list of supported device types with supported attributes:
     _update_interval is 15 min by default_
 
 - cover
-
   - `targetPosition` _(BYTE)_
 
   - `tiltAngle` _(BYTE)_
@@ -231,7 +226,6 @@ Current list of supported device types with supported attributes:
     this bit will be turned on and off automatically after one of the other attributes of the cover will be changed
 
 - binaryCover
-
   - `targetPosition` _(X)_
 
   - `currentPosition` _(X)_  
