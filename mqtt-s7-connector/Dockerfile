@@ -3,11 +3,11 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.0.0
 FROM ${BUILD_FROM}
 
 # renovate: datasource=repology depName=alpine_3_20/nodejs-current versioning=loose
-ENV NODEJS_VERSION="23.2.0-r1"
+ENV NODEJS_VERSION="23.11.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/npm versioning=loose
-ENV NPM_VERSION="10.9.1-r0"
+ENV NPM_VERSION="11.3.0-r0"
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
-ENV GIT_VERSION="2.47.3-r0"
+ENV GIT_VERSION="2.49.1-r0"
 
 
 RUN apk add --update --no-cache \
