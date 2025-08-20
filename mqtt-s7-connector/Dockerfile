@@ -7,7 +7,7 @@ ENV NODEJS_VERSION="23.2.0-r1"
 # renovate: datasource=repology depName=alpine_3_20/npm versioning=loose
 ENV NPM_VERSION="10.9.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
-ENV GIT_VERSION="2.47.2-r0"
+ENV GIT_VERSION="2.47.3-r0"
 
 
 RUN apk add --update --no-cache \
