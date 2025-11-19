@@ -4,7 +4,7 @@
 
 ## Add-ons
 
-This repository contains the following add-ons:
+This repository contains the following add-on:
 
 ### [MQTT Siemens S7 Connector](./mqtt-s7-connector)
 
