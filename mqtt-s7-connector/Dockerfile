@@ -5,7 +5,7 @@ FROM ${BUILD_FROM}
 # renovate: datasource=repology depName=alpine_3_20/nodejs-current versioning=loose
 ENV NODEJS_VERSION="23.11.1-r0"
 # renovate: datasource=repology depName=alpine_3_20/npm versioning=loose
-ENV NPM_VERSION="11.3.0-r1"
+ENV NPM_VERSION="11.4.2-r0"
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
 ENV GIT_VERSION="2.49.1-r0"
 
