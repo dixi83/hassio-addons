@@ -1,3 +1,7 @@
+# Archive this repository
+
+Now https://github.com/xtimmy86x/ha-s7plc is here to serve the HA<>S7 need. I will archive this repository.
+
 # MQTT S7 Connector - Home Assistant Addon
 
 _MQTT Siemens S7 connector to integrate Siemens PLC's with Home Assistant_
