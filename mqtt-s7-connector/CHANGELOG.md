@@ -1,5 +1,6 @@
-**Please note:**
-Soon the update will contain the preparations and for the object rename form `devices` to `enities`.
+## 1.0.9 + 10
+
+This repo will be archived please proceed with: https://github.com/xtimmy86x/ha-s7plc
 
 ## 1.0.8
 
